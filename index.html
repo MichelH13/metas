@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flor Surgindo da Terra</title>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        height: 100vh;
+        background: linear-gradient(#87CEEB, #E0F6FF);
+        overflow: hidden;
+    }
+
+    .terra {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 150px;
+        background: linear-gradient(#8B4513, #5C3317);
+        box-shadow: inset 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    .flor {
+        position: relative;
+        bottom: -100px;
+        animation: crescer 4s ease-out forwards;
+    }
+
+    .caule {
+        width: 10px;
+        height: 120px;
+        background: linear-gradient(#228B22, #006400);
+        margin: auto;
+        border-radius: 5px;
+    }
+
+    .petala {
+        width: 60px;
+        height: 60px;
+        background: radial-gradient(circle at center, #FF69B4, #C71585);
+        border-radius: 50%;
+        position: absolute;
+        top: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+        box-shadow: 0 0 15px rgba(255,105,180,0.6);
+    }
+
+    .centro {
+        width: 20px;
+        height: 20px;
+        background: yellow;
+        border-radius: 50%;
+        position: absolute;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        box-shadow: 0 0 10px rgba(255,255,0,0.8);
+    }
+
+    @keyframes crescer {
+        0% { transform: translateY(150px) scale(0.5); opacity: 0; }
+        50% { opacity: 1; }
+        100% { transform: translateY(0) scale(1); }
+    }
+</style>
+</head>
+<body>
+
+<div class="terra"></div>
+
+<div class="flor">
+    <div class="caule"></div>
+    <div class="petala"></div>
+    <div class="centro"></div>
+</div>
+
+</body>
+</html>
+
