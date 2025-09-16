@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <title>Nosso Amor ❤️</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #ff99c8, #ff6b6b, #845ec2);
+      color: #fff;
+      text-align: center;
+      padding: 30px;
+    }
+    h1 { margin-bottom: 20px; }
+    .counter {
+      background: rgba(255,255,255,0.15);
+      border-radius: 15px;
+      padding: 20px;
+      margin: 15px auto;
+      width: 260px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    }
+    .number {
+      font-size: 2rem;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+    button {
+      padding: 10px 15px;
+      border: none;
+      border-radius: 10px;
+      background: #ff477e;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      margin: 5px;
+    }
+    button:hover { background: #ff2e63; }
+  </style>
+</head>
+<body>
+  <h1>🌸 Projeto do Amor 🌸</h1>
+  <p>Aqui guardamos nossos momentos felizes!</p>
+
+  <div class="counter">
+    <h2>Dias sem brigar</h2>
+    <div class="number" id="dias">0</div>
+    <button onclick="increment('dias')">+1 dia</button>
+  </div>
+
+  <div class="counter">
+    <h2>Beijos 😘</h2>
+    <div class="number" id="beijos">0</div>
+    <button onclick="increment('beijos')">+1 beijo</button>
+  </div>
+
+  <div class="counter">
+    <h2>Abraços 🤗</h2>
+    <div class="number" id="abracos">0</div>
+    <button onclick="increment('abracos')">+1 abraço</button>
+  </div>
+
+  <div class="counter">
+    <h2>Namoramos este mês 💕</h2>
+    <div class="number" id="namoro">0</div>
+    <button onclick="increment('namoro')">+1 vez</button>
+  </div>
+
+  <script>
+    // Lista dos contadores
+    const counters = ["dias", "beijos", "abracos", "namoro"];
+
+    // Carregar valores salvos no localStorage
+    counters.forEach(c => {
+      let value = localStorage.getItem(c) || 0;
+      document.getElementById(c).textContent = value;
+    });
+
+    // Função para incrementar
+    function increment(id) {
+      let el = document.getElementById(id);
+      let value = parseInt(el.textContent) + 1;
+      el.textContent = value;
+      localStorage.setItem(id, value);
+    }
+  </script>
+</body>
+</html>
